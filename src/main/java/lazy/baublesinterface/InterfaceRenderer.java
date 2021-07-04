@@ -5,6 +5,7 @@ import lazy.baubles.api.BaublesAPI;
 import lazy.baubles.api.cap.IBaublesItemHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -42,6 +43,7 @@ public class InterfaceRenderer {
             for (int i = 0; i < 4; i++) {
                 ItemStack stackInSlot = baublesInv.getStackInSlot(i);
                 Minecraft.getInstance().getItemRenderer().renderGuiItem(stackInSlot, startPos.getFirst() + xOff * i, startPos.getSecond() + yOff * i);
+                Minecraft.getInstance().getItemRenderer().renderGuiItemDecorations(Minecraft.getInstance().font, stackInSlot, startPos.getFirst() + xOff * i, startPos.getSecond() + yOff * i);
             }
         }
     }
